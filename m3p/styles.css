@@ -1,0 +1,258 @@
+body {
+  height: 1800px;
+  display: flex;
+  flex-direction: column;
+	font-size: 16px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/*CSS sorted from top to bottom of webpage; very few elements are repeated.*/
+header{
+  display: flex;
+  justify-content: space-between;
+  color: #6b6b6b;
+  margin-left: 10px;
+}
+.lefthead,.righthead{
+  display: flex;
+  width: 50%;
+}
+.lefthead{
+  align-items: center;
+}
+.righthead{
+  justify-content: space-evenly;
+  width: 30%;
+  margin-right: 20px;
+}
+.selected{
+  color: black;
+}
+/*It looked like a darker color and was not specified.*/
+.cont{
+  height: 1200px;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-rows: repeat(5, fit-content);
+  justify-content: space-evenly;
+}
+.about{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #6b6b6b;
+}
+.about h1{
+  font-family: 'Exo',sans-serif;
+  font-size: 50px;
+  font-weight: 100px ;
+  margin-bottom: 0px;
+}
+/*Switched font here and in the other section header due to the original font not having any thinner settings.*/
+.about p{
+  margin-top: 0px;
+  max-width: 70%;
+  margin-left: auto;
+  margin-right:auto;
+}
+.scenes{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  grid-gap: 10px;  
+}
+.scene{
+  margin: 10px;
+  padding-left: 5px; 
+}
+.scene img{
+  max-height: 200px;
+  max-width: inherit;
+}
+.scene h3{
+  color: #6b6b6b;
+}
+p {
+  color: #999;
+}
+.intro{
+  display: grid;
+  text-align: center;
+  color: #6b6b6b;
+}
+.intro h2{
+  font-family: 'Exo',sans-serif;
+  font-size: 30px;
+  font-weight: 100px ;
+  margin-bottom: 0px;
+}
+.intro p{
+  margin-top: 0px;
+  max-width: 60%;
+  margin-left: auto;
+  margin-right:auto;
+}
+.arrows{
+  display:grid;
+  align-items: center;
+  grid-template-columns: 16px 1fr 16px;
+  grid-template-areas: 
+  "la team ra";
+}
+.team{
+  grid-area: "team";
+  display: grid;
+  justify-content: space-evenly;
+  align-items: center;
+  grid-template-columns:  180px 180px 180px 180px;
+  grid-template-areas: 
+  "person1 person2 person3 person4";
+}
+.person1 img,.person2 img,.person3 img,.person4 img{
+ max-width: 180px;
+}
+.person1{
+  grid-area: "person1";
+}
+.person2{
+  grid-area: "person2";
+}
+.person3{
+  grid-area: "person3";
+}
+.person4{
+  grid-area: "person4";
+}
+.la{
+  grid-area: "la";
+}
+.ra{
+  grid-area: "ra";
+}
+.team h4{
+  color: #6b6b6b;
+}
+footer{
+ background-color: #282828;
+ width: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-evenly;
+}
+.socialmedia, .midfooter{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.socialmedia{
+  column-gap: 10px;
+  align-items: center;
+}
+.socialmedia img{
+  width: 22px;
+  height: 22px;
+}
+.f,.t,.i,.l{
+  display: flex;
+  align-items: center;
+}
+.midfooter{
+  column-gap: 200px;
+}
+.lowfooter{
+  text-align: center;
+  border-top: black solid 1px;
+}
+.lowfooter p{
+  font-size: x-small;
+}
+footer h5{
+  color: white;
+}
+@media(max-width:1024px){
+  body{
+    height: 1800px;
+  }
+  .body,.cont,.about,.scenes,.intro,.team{
+    max-width: 1024px;
+  }
+  .scene{
+    max-width: 300px;
+  }
+  .team{
+    grid-area: "team";
+    grid-template-columns:  150px 150px 150px 150px;
+  }
+  .person1 img,.person2 img,.person3 img,.person4 img{
+   max-width: 150px;
+  }
+}
+@media(max-width:768px){
+  body{
+    height: 2000px;
+  }
+  .body,.cont,.about,.scenes,.intro,.team{
+    max-width: 768px;
+  }
+  .cont{
+    margin: 0px;
+    height: 1800px;
+  }
+  .scene{
+    max-width: 200px;
+  }
+  .team{
+    justify-content: space-evenly;
+    grid-template-columns: 180px 180px;
+    grid-template-rows: 350px 350px;
+    grid-template-areas: 
+    "person1 person2"
+    "person3 person4";
+  }
+  .midfooter{
+    column-gap: 90px;
+  }
+}
+@media(max-width:480px){
+  body{
+    height: 3200px;
+  }
+  .cont{
+    height: 2800px;
+  }
+  .body,.cont,.about,.scenes,.intro,.team{
+    max-width: 480px;
+  }
+  .scenes{
+    height: 1200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 400px);
+    justify-content: center;
+    grid-gap: 10px;
+    align-items: center;
+  }
+  .scene{
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 400px;
+  }
+  .scene img{
+    max-height: inherit;
+    max-width: inherit;
+  }
+  .socialmedia{
+    display: flex;
+  }
+  .midfooter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .righthead{
+    width: 50%;
+    margin-right: 20px;
+  }
+}
+  
